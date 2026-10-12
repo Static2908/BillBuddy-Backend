@@ -1,0 +1,259 @@
+BILLBUDDY ELECTRICITY BILLING KNOWLEDGE BASE
+
+==================================================
+1. ELECTRICITY USAGE
+==================================================
+
+Electricity consumption is commonly measured in kilowatt-hours (kWh).
+
+A kilowatt-hour represents the amount of energy consumed by using
+one kilowatt of power for one hour.
+
+Example:
+
+Usage = 250 kWh
+
+This means the recorded electricity consumption for the billing
+period is 250 kilowatt-hours.
+
+
+==================================================
+2. ELECTRICITY BILL AMOUNT
+==================================================
+
+The total electricity bill may contain more than the charge directly
+associated with electricity consumption.
+
+Depending on the billing system, a bill may include:
+
+- Energy or consumption charges.
+- Fixed charges.
+- Service charges.
+- Taxes.
+- Regulatory charges.
+- Other applicable fees.
+- Billing adjustments.
+
+The exact composition of a bill depends on the electricity provider
+and the applicable billing rules.
+
+BillBuddy should use the actual bill information when available rather
+than assuming a particular charge exists.
+
+
+==================================================
+3. ELECTRICITY USAGE INCREASE
+==================================================
+
+An increase in electricity usage means that more electrical energy was
+recorded during the current billing period compared with a previous
+period.
+
+Possible contributing factors include:
+
+- Increased use of electrical appliances.
+- Longer operating time of appliances.
+- Additional electrical devices.
+- Seasonal changes.
+- Changes in occupancy or daily activity.
+- Changes in usage behavior.
+
+These are possible explanations and should not be treated as confirmed
+causes without supporting evidence.
+
+
+==================================================
+4. ELECTRICITY BILL AMOUNT INCREASE
+==================================================
+
+An electricity bill can increase because of:
+
+- Increased electricity consumption.
+- Changes in applicable rates or tariffs.
+- Fixed charges.
+- Taxes or regulatory charges.
+- Additional fees.
+- Billing adjustments.
+- Changes in the billing period.
+
+A higher bill amount does not automatically mean that electricity
+consumption increased.
+
+BillBuddy should compare both the total amount and usage before
+interpreting an electricity bill increase.
+
+
+==================================================
+5. COST PER UNIT
+==================================================
+
+For BillBuddy analysis, electricity cost per unit can be calculated as:
+
+Cost per unit = Total bill amount / Electricity usage in kWh
+
+Example:
+
+Total bill = 3000
+Usage = 300 kWh
+
+Cost per unit = 3000 / 300
+              = 10 per kWh
+
+Comparing cost per unit across billing periods can help identify
+whether the amount paid changed disproportionately to electricity
+consumption.
+
+This calculated value is an analytical measure and may not represent
+the official tariff rate because the total bill may contain fixed
+charges, taxes, fees, or other components.
+
+
+==================================================
+6. ELECTRICITY BILL ANOMALIES
+==================================================
+
+BillBuddy may detect the following electricity-related anomalies:
+
+AMOUNT_SPIKE
+
+A significant increase in the total bill amount compared with the
+previous electricity bill.
+
+BillBuddy threshold:
+20 percent or greater increase.
+
+
+USAGE_SPIKE
+
+A significant increase in electricity consumption compared with the
+previous electricity bill.
+
+BillBuddy threshold:
+20 percent or greater increase.
+
+
+COST_PER_UNIT_SPIKE
+
+A significant increase in calculated cost per kWh compared with the
+previous electricity bill.
+
+BillBuddy threshold:
+15 percent or greater increase.
+
+
+ZERO_USAGE_NONZERO_AMOUNT
+
+The bill contains zero recorded electricity usage while the total
+amount is greater than zero.
+
+Possible explanations may include fixed charges, minimum charges,
+taxes, fees, adjustments, or missing/incorrect usage information.
+
+The system should not assume that the electricity bill is incorrect
+without additional evidence.
+
+
+==================================================
+7. INTERPRETING ELECTRICITY BILL CHANGES
+==================================================
+
+BillBuddy should compare:
+
+1. Previous electricity bill amount.
+2. Current electricity bill amount.
+3. Previous electricity usage.
+4. Current electricity usage.
+5. Previous cost per kWh.
+6. Current cost per kWh.
+
+Example:
+
+Previous:
+Amount = 2500
+Usage = 250 kWh
+Cost per unit = 10
+
+Current:
+Amount = 3000
+Usage = 300 kWh
+Cost per unit = 10
+
+Interpretation:
+
+The bill amount increased by 20 percent and electricity usage also
+increased by 20 percent.
+
+The calculated cost per unit remained unchanged.
+
+Therefore, the available data indicates that the increase in the bill
+amount corresponds with the increase in recorded electricity usage.
+
+It does not establish why the electricity usage increased.
+
+
+==================================================
+8. WHEN ELECTRICITY USAGE DOES NOT INCREASE
+==================================================
+
+If the electricity usage remains approximately the same but the total
+bill amount increases significantly, BillBuddy should consider the
+following as possible explanations:
+
+- Changes in applicable charges.
+- Fixed charges.
+- Taxes or fees.
+- Billing adjustments.
+- Rate or tariff changes.
+
+However, BillBuddy must not claim that any specific factor caused
+the increase unless supporting information is available.
+
+
+==================================================
+9. ELECTRICITY BILL VERIFICATION
+==================================================
+
+When an electricity bill appears unusual, the user may verify:
+
+- Recorded electricity usage.
+- Billing period.
+- Previous meter reading.
+- Current meter reading.
+- Applicable charges.
+- Fixed charges.
+- Taxes and fees.
+- Billing adjustments.
+- Provider-issued tariff information.
+
+BillBuddy should provide these as verification suggestions rather than
+claiming that an error definitely occurred.
+
+
+==================================================
+10. EVIDENCE RULE
+==================================================
+
+BillBuddy explanations must distinguish between:
+
+FACT:
+Information directly available from the bill data.
+
+INFERENCE:
+A conclusion calculated from available bill information.
+
+POSSIBLE CAUSE:
+A potential explanation that requires additional evidence.
+
+Example:
+
+FACT:
+Electricity usage increased from 250 kWh to 300 kWh.
+
+INFERENCE:
+Usage increased by 20 percent.
+
+POSSIBLE CAUSE:
+Increased appliance usage could contribute to the increase.
+
+The possible cause must not be presented as a confirmed explanation
+unless supporting evidence is available.

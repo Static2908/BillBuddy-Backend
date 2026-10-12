@@ -1,0 +1,308 @@
+BILLBUDDY GENERAL BILLING KNOWLEDGE BASE
+
+==================================================
+1. BILLING PERIOD
+==================================================
+
+A billing period is the time interval covered by a utility bill.
+
+BillBuddy uses the billing period when comparing bills and analyzing
+spending patterns.
+
+Bills should generally be compared with previous bills for the same
+utility and relevant billing period.
+
+
+==================================================
+2. COMPARING BILLS
+==================================================
+
+A meaningful bill comparison should consider:
+
+- Same utility type.
+- Previous and current billing periods.
+- Total bill amount.
+- Usage amount.
+- Usage unit.
+- Calculated cost per unit when usage is available.
+
+BillBuddy should avoid comparing unrelated utilities.
+
+For example:
+
+Electricity usage measured in kWh should not be directly compared
+with water usage measured in kL.
+
+
+==================================================
+3. BILL AMOUNT CHANGE
+==================================================
+
+Percentage change in bill amount can be calculated as:
+
+((Current amount - Previous amount) / Previous amount) × 100
+
+Example:
+
+Previous amount = 2500
+Current amount = 3000
+
+Difference = 500
+
+Percentage change = (500 / 2500) × 100
+                 = 20%
+
+A positive percentage indicates an increase.
+
+A negative percentage indicates a decrease.
+
+
+==================================================
+4. USAGE CHANGE
+==================================================
+
+Percentage change in usage can be calculated as:
+
+((Current usage - Previous usage) / Previous usage) × 100
+
+Example:
+
+Previous usage = 250
+Current usage = 300
+
+Difference = 50
+
+Percentage change = (50 / 250) × 100
+                 = 20%
+
+The usage units must be considered when interpreting the result.
+
+
+==================================================
+5. COST PER UNIT
+==================================================
+
+When both bill amount and usage are available, BillBuddy can calculate
+an analytical cost per unit:
+
+Cost per unit = Total bill amount / Usage amount
+
+The result depends on the usage unit.
+
+Examples:
+
+Electricity:
+Amount / kWh
+
+Water:
+Amount / kL
+
+Internet:
+Amount / GB
+
+This calculated value should not automatically be interpreted as the
+provider's official tariff because the total bill may include other
+charges.
+
+
+==================================================
+6. MISSING USAGE
+==================================================
+
+Some bills may not contain usage information.
+
+If usage is unavailable:
+
+- Usage percentage change cannot be calculated.
+- Cost per unit cannot be calculated.
+- Usage-based anomaly rules may not be applicable.
+
+BillBuddy should not invent missing usage information.
+
+
+==================================================
+7. ZERO PREVIOUS USAGE
+==================================================
+
+Percentage change cannot normally be calculated when the previous
+usage is zero because division by zero is undefined.
+
+BillBuddy should avoid generating a misleading usage percentage in
+this situation.
+
+Other available information may still be analyzed.
+
+
+==================================================
+8. BILL ANOMALIES
+==================================================
+
+BillBuddy currently uses the following anomaly rules:
+
+AMOUNT_SPIKE:
+Bill amount increased by 20 percent or more.
+
+USAGE_SPIKE:
+Usage increased by 20 percent or more.
+
+COST_PER_UNIT_SPIKE:
+Calculated cost per unit increased by 15 percent or more.
+
+ZERO_USAGE_NONZERO_AMOUNT:
+Usage is zero while the bill amount is greater than zero.
+
+
+==================================================
+9. MULTIPLE ANOMALIES
+==================================================
+
+A single bill may trigger multiple anomaly rules.
+
+For example:
+
+AMOUNT_SPIKE + USAGE_SPIKE
+
+means that both the bill amount and recorded usage increased
+significantly.
+
+Another example:
+
+AMOUNT_SPIKE + COST_PER_UNIT_SPIKE
+
+means that the bill amount increased significantly and the calculated
+cost per unit also increased significantly.
+
+Multiple anomalies do not automatically establish a specific cause.
+
+
+==================================================
+10. FACTS AND POSSIBLE EXPLANATIONS
+==================================================
+
+BillBuddy should separate factual observations from possible
+explanations.
+
+FACT:
+The current bill is 20 percent higher than the previous bill.
+
+POSSIBLE EXPLANATION:
+Higher consumption, rate changes, additional charges, or adjustments
+could contribute to the increase.
+
+The possible explanation should not be presented as a confirmed cause
+without supporting evidence.
+
+
+==================================================
+11. BILL VERIFICATION
+==================================================
+
+When an anomaly is detected, useful verification steps may include:
+
+- Compare the current bill with previous bills.
+- Check the billing period.
+- Check recorded usage.
+- Check usage units.
+- Review the detailed charge breakdown.
+- Check fixed charges.
+- Check taxes and fees.
+- Check adjustments.
+- Check provider or plan information where applicable.
+
+BillBuddy should recommend verification rather than automatically
+claiming that a bill is incorrect.
+
+
+==================================================
+12. LIMITATIONS OF BILL ANALYSIS
+==================================================
+
+BillBuddy analyzes the information available in the user's bill data.
+
+BillBuddy may not be able to determine the exact cause of an anomaly
+when information such as the following is unavailable:
+
+- Detailed charge breakdown.
+- Tariff information.
+- Meter readings.
+- Plan history.
+- Provider adjustments.
+- Usage activity details.
+
+In such cases, BillBuddy should clearly state that the available data
+is insufficient to determine the exact cause.
+
+
+==================================================
+13. RESPONSIBLE EXPLANATIONS
+==================================================
+
+BillBuddy should:
+
+1. State what changed.
+2. Show the relevant values.
+3. Show the calculated percentage where applicable.
+4. Identify the detected anomaly.
+5. Explain what the anomaly means.
+6. Mention possible explanations only when useful.
+7. Clearly label possible explanations as possibilities.
+8. Recommend verification steps when appropriate.
+9. Avoid unsupported claims.
+
+
+==================================================
+14. RAG RESPONSE PRINCIPLE
+==================================================
+
+The retrieved knowledge-base information should be used to provide
+context for an anomaly explanation.
+
+The retrieved information should supplement the actual bill data.
+
+The knowledge base must not override factual values stored in the
+BillBuddy database.
+
+For example:
+
+Database:
+Current amount = 3000
+Previous amount = 2500
+
+Knowledge base:
+AMOUNT_SPIKE means a 20 percent or greater increase.
+
+BillBuddy can combine these facts to explain:
+
+"The bill increased from 2500 to 3000, which is a 20 percent increase.
+This meets the BillBuddy threshold for an amount spike."
+
+The system should not add unsupported information such as:
+
+"The electricity provider increased the tariff."
+
+unless tariff information is actually available.
+
+
+==================================================
+15. RAG AND LLM SAFETY PRINCIPLE
+==================================================
+
+The retrieval system should provide relevant knowledge to the LLM.
+
+The LLM should use:
+
+- Retrieved knowledge.
+- Actual bill data.
+- Detected anomaly information.
+
+The LLM should not:
+
+- Invent bill values.
+- Invent provider policies.
+- Invent tariff changes.
+- Invent usage activities.
+- Claim an anomaly that the backend did not detect.
+- Present possible causes as confirmed facts.
+
+If sufficient evidence is unavailable, the system should say that the
+cause cannot be determined from the available information.

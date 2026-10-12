@@ -1,0 +1,325 @@
+BILLBUDDY INTERNET BILLING KNOWLEDGE BASE
+
+==================================================
+1. INTERNET USAGE
+==================================================
+
+Internet usage may be measured using units such as gigabytes (GB).
+
+For BillBuddy, internet usage can be represented in gigabytes when
+the bill or provider supplies usage information.
+
+Example:
+
+Usage = 350 GB
+
+This represents the recorded internet data consumption during the
+billing period.
+
+
+==================================================
+2. INTERNET BILL AMOUNT
+==================================================
+
+An internet bill may contain several components depending on the
+provider and subscribed plan.
+
+Possible components include:
+
+- Subscription or plan charges.
+- Usage-based charges.
+- Installation or equipment charges.
+- Service charges.
+- Taxes.
+- Fees.
+- Additional services.
+- Billing adjustments.
+- Prorated charges.
+
+The exact components depend on the provider and the customer's plan.
+
+BillBuddy should use the actual bill information when available rather
+than assuming that a particular charge exists.
+
+
+==================================================
+3. INTERNET USAGE INCREASE
+==================================================
+
+An increase in internet usage means that the recorded data consumption
+is higher during the current billing period compared with a previous
+period.
+
+Possible contributing factors include:
+
+- Increased streaming.
+- Larger downloads.
+- Online gaming.
+- Software or operating system updates.
+- Cloud synchronization.
+- Increased number of connected devices.
+- Changes in user activity.
+- Changes in household or network usage.
+
+These are possible explanations only.
+
+BillBuddy must not claim that a specific activity caused the increase
+unless supporting evidence is available.
+
+
+==================================================
+4. INTERNET BILL AMOUNT INCREASE
+==================================================
+
+A higher internet bill may result from:
+
+- Changes in the subscribed plan.
+- Increased usage where usage-based billing applies.
+- Additional services.
+- Equipment charges.
+- Installation or activation charges.
+- Taxes or fees.
+- Billing adjustments.
+- Prorated charges.
+- Changes in applicable rates.
+
+A higher bill amount does not automatically mean that internet usage
+increased.
+
+BillBuddy should compare the bill amount, usage, and available plan
+information.
+
+
+==================================================
+5. COST PER UNIT
+==================================================
+
+For BillBuddy analysis, calculated internet cost per unit can be
+expressed as:
+
+Cost per unit = Total bill amount / Internet usage
+
+When usage is measured in GB:
+
+Cost per unit = Total bill amount / Usage in GB
+
+Example:
+
+Total bill = 999
+Usage = 350 GB
+
+Cost per unit = 999 / 350
+
+This calculated value is an analytical measure.
+
+It should not automatically be interpreted as the provider's official
+price per GB because an internet plan may include fixed subscription
+charges, taxes, fees, or other components.
+
+
+==================================================
+6. INTERNET BILL ANOMALIES
+==================================================
+
+BillBuddy may detect the following anomalies in internet bills:
+
+AMOUNT_SPIKE
+
+A significant increase in the total internet bill amount compared
+with the previous internet bill.
+
+BillBuddy threshold:
+20 percent or greater increase.
+
+
+USAGE_SPIKE
+
+A significant increase in recorded internet usage compared with the
+previous internet bill.
+
+BillBuddy threshold:
+20 percent or greater increase.
+
+
+COST_PER_UNIT_SPIKE
+
+A significant increase in calculated internet cost per GB compared
+with the previous internet bill.
+
+BillBuddy threshold:
+15 percent or greater increase.
+
+
+ZERO_USAGE_NONZERO_AMOUNT
+
+The internet bill contains zero recorded usage while the total bill
+amount is greater than zero.
+
+Possible explanations include:
+
+- Fixed subscription charges.
+- Minimum charges.
+- Service charges.
+- Taxes or fees.
+- Plan charges.
+- Billing adjustments.
+- Missing or unavailable usage information.
+
+BillBuddy must not assume that the bill is incorrect without
+additional evidence.
+
+
+==================================================
+7. INTERPRETING INTERNET BILL CHANGES
+==================================================
+
+BillBuddy should compare:
+
+1. Previous internet bill amount.
+2. Current internet bill amount.
+3. Previous internet usage.
+4. Current internet usage.
+5. Previous calculated cost per GB.
+6. Current calculated cost per GB.
+7. Available plan information, if present.
+
+Example:
+
+Previous:
+Amount = 999
+Usage = 350 GB
+
+Current:
+Amount = 1200
+Usage = 450 GB
+
+Interpretation:
+
+The internet bill amount increased.
+
+Recorded internet usage also increased.
+
+The available data shows a relationship between increased usage and
+the increased bill amount, but it does not establish the exact cause
+of the increased usage.
+
+
+==================================================
+8. WHEN INTERNET USAGE DOES NOT INCREASE
+==================================================
+
+If internet usage remains approximately the same while the bill amount
+increases significantly, possible explanations may include:
+
+- Plan changes.
+- Additional services.
+- Equipment charges.
+- Taxes or fees.
+- Billing adjustments.
+- Prorated charges.
+- Rate changes.
+
+These should be presented as possibilities rather than confirmed
+causes unless supporting information is available.
+
+
+==================================================
+9. PLAN CHANGES
+==================================================
+
+An internet bill may change because the subscribed plan changed.
+
+Examples include:
+
+- A change in monthly subscription price.
+- A change in data allowance.
+- Addition of a service.
+- Removal or addition of an equipment charge.
+- Change in billing terms.
+
+If BillBuddy does not have plan history, it cannot confirm that a plan
+change caused an increase.
+
+The user should verify the current bill against the provider's plan
+details when necessary.
+
+
+==================================================
+10. INTERNET BILL VERIFICATION
+==================================================
+
+When an internet bill appears unusual, the user may verify:
+
+- Current plan.
+- Previous plan, if available.
+- Recorded data usage.
+- Billing period.
+- Subscription charge.
+- Additional services.
+- Equipment charges.
+- Taxes and fees.
+- Billing adjustments.
+- Prorated charges.
+
+The user may also compare the current bill with previous bills to
+identify whether the change is temporary or part of a longer-term
+pattern.
+
+
+==================================================
+11. INTERNET USAGE INTERPRETATION
+==================================================
+
+High internet usage does not automatically mean that the bill is
+incorrect.
+
+Increased usage may be caused by normal user activity such as:
+
+- Video streaming.
+- Gaming.
+- Software updates.
+- Large file downloads.
+- Cloud backups.
+- Multiple connected devices.
+
+BillBuddy should distinguish between:
+
+FACT:
+Recorded internet usage increased.
+
+INFERENCE:
+The percentage increase can be calculated from the available bill data.
+
+POSSIBLE CAUSE:
+Higher streaming, downloads, updates, or other activity could have
+contributed.
+
+The possible cause must not be presented as confirmed without evidence.
+
+
+==================================================
+12. EVIDENCE RULE
+==================================================
+
+BillBuddy explanations should distinguish between:
+
+FACT:
+Information directly available from the internet bill.
+
+INFERENCE:
+A calculation or comparison derived from available bill information.
+
+POSSIBLE CAUSE:
+An explanation requiring additional evidence.
+
+BillBuddy must not invent:
+
+- Data usage activities.
+- Plan changes.
+- Provider actions.
+- Additional charges.
+- Technical problems.
+
+If the available data is insufficient to determine the cause of an
+anomaly, BillBuddy should clearly state that the cause cannot be
+determined from the available bill information.

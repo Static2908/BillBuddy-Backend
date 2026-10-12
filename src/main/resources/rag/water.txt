@@ -1,0 +1,290 @@
+BILLBUDDY WATER BILLING KNOWLEDGE BASE
+
+==================================================
+1. WATER USAGE
+==================================================
+
+Water consumption can be measured using units such as kilolitres (kL).
+
+For BillBuddy, water usage may be represented in kilolitres.
+
+Example:
+
+Usage = 25 kL
+
+This represents the recorded water consumption during the billing
+period.
+
+
+==================================================
+2. WATER BILL AMOUNT
+==================================================
+
+A water bill may contain several components depending on the provider
+and applicable billing rules.
+
+Possible components include:
+
+- Water consumption charges.
+- Fixed charges.
+- Service charges.
+- Sewerage or related charges.
+- Taxes.
+- Fees.
+- Billing adjustments.
+
+The exact composition depends on the water provider.
+
+BillBuddy should rely on the actual bill data when available instead
+of assuming that every bill contains all of these components.
+
+
+==================================================
+3. WATER USAGE INCREASE
+==================================================
+
+An increase in water usage means that the recorded water consumption
+is higher during the current billing period than during a previous
+period.
+
+Possible contributing factors include:
+
+- Increased household water consumption.
+- Changes in daily usage.
+- More frequent use of water-consuming activities.
+- Seasonal changes.
+- Changes in occupancy.
+- Irrigation or outdoor water use.
+- Changes in consumption behavior.
+
+These are possible explanations only.
+
+BillBuddy must not state that a specific factor caused the increase
+without supporting evidence.
+
+
+==================================================
+4. WATER BILL AMOUNT INCREASE
+==================================================
+
+A higher water bill may result from:
+
+- Increased water consumption.
+- Changes in applicable rates.
+- Fixed charges.
+- Service charges.
+- Taxes or fees.
+- Billing adjustments.
+- Changes in the billing period.
+
+A higher bill amount does not automatically mean that water consumption
+increased.
+
+BillBuddy should compare both the bill amount and water usage.
+
+
+==================================================
+5. COST PER UNIT
+==================================================
+
+For BillBuddy analysis, calculated water cost per unit can be expressed
+as:
+
+Cost per unit = Total bill amount / Water usage
+
+When water usage is measured in kilolitres:
+
+Cost per unit = Total bill amount / Usage in kL
+
+Example:
+
+Total bill = 850
+Usage = 25 kL
+
+Cost per unit = 850 / 25
+              = 34 per kL
+
+This calculated value is an analytical measure.
+
+It may not represent the official water tariff because the total bill
+may contain fixed charges, taxes, fees, or other components.
+
+
+==================================================
+6. WATER BILL ANOMALIES
+==================================================
+
+BillBuddy may detect the following anomalies in water bills:
+
+AMOUNT_SPIKE
+
+A significant increase in the total water bill amount compared with
+the previous water bill.
+
+BillBuddy threshold:
+20 percent or greater increase.
+
+
+USAGE_SPIKE
+
+A significant increase in recorded water consumption compared with
+the previous water bill.
+
+BillBuddy threshold:
+20 percent or greater increase.
+
+
+COST_PER_UNIT_SPIKE
+
+A significant increase in calculated water cost per kilolitre compared
+with the previous water bill.
+
+BillBuddy threshold:
+15 percent or greater increase.
+
+
+ZERO_USAGE_NONZERO_AMOUNT
+
+The water bill contains zero recorded usage while the total bill
+amount is greater than zero.
+
+Possible explanations include:
+
+- Fixed charges.
+- Minimum charges.
+- Service charges.
+- Taxes or fees.
+- Billing adjustments.
+- Missing or incorrect usage information.
+
+BillBuddy must not assume that the bill is incorrect without additional
+evidence.
+
+
+==================================================
+7. INTERPRETING WATER BILL CHANGES
+==================================================
+
+BillBuddy should compare:
+
+1. Previous water bill amount.
+2. Current water bill amount.
+3. Previous water usage.
+4. Current water usage.
+5. Previous cost per kL.
+6. Current cost per kL.
+
+Example:
+
+Previous:
+Amount = 850
+Usage = 25 kL
+Cost per unit = 34
+
+Current:
+Amount = 1100
+Usage = 32 kL
+Cost per unit = 34.375
+
+Interpretation:
+
+The water bill amount increased.
+
+Water usage also increased from 25 kL to 32 kL.
+
+The calculated cost per unit increased only slightly.
+
+The available bill data therefore shows both increased consumption and
+an increase in the total bill amount.
+
+The data alone does not establish the exact reason for the increased
+water consumption.
+
+
+==================================================
+8. WHEN WATER USAGE DOES NOT INCREASE
+==================================================
+
+If water consumption remains approximately the same while the bill
+amount increases significantly, possible explanations may include:
+
+- Changes in applicable charges.
+- Fixed charges.
+- Service charges.
+- Taxes or fees.
+- Billing adjustments.
+- Rate changes.
+
+These should be presented as possibilities rather than confirmed
+causes unless supporting information is available.
+
+
+==================================================
+9. WATER BILL VERIFICATION
+==================================================
+
+When a water bill appears unusual, the user may verify:
+
+- Recorded water usage.
+- Billing period.
+- Previous usage reading.
+- Current usage reading.
+- Applicable rates.
+- Fixed charges.
+- Service charges.
+- Taxes and fees.
+- Billing adjustments.
+
+The user may also compare the current bill with previous bills to
+identify whether the change is temporary or part of a longer-term
+pattern.
+
+BillBuddy should present these as verification suggestions.
+
+
+==================================================
+10. WATER USAGE AND POSSIBLE LEAKS
+==================================================
+
+An unusual increase in water usage may sometimes be associated with
+higher consumption or a possible leak.
+
+However, increased usage alone does not prove that a leak exists.
+
+BillBuddy should not state that a leak occurred unless supporting
+evidence is available.
+
+A safer explanation is:
+
+"The recorded water usage increased significantly. A leak is one
+possible explanation, but the available bill data cannot confirm this."
+
+
+==================================================
+11. EVIDENCE RULE
+==================================================
+
+BillBuddy explanations should distinguish between:
+
+FACT:
+Information directly available from the water bill.
+
+INFERENCE:
+A calculation or comparison derived from the available data.
+
+POSSIBLE CAUSE:
+An explanation that requires additional evidence.
+
+Example:
+
+FACT:
+Water usage increased from 25 kL to 32 kL.
+
+INFERENCE:
+Water usage increased by 28 percent.
+
+POSSIBLE CAUSE:
+Higher household consumption or another factor could have contributed.
+
+The possible cause must not be presented as a confirmed explanation
+without supporting evidence.

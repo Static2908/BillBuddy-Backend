@@ -1,0 +1,253 @@
+BILLBUDDY BILLING ANOMALIES KNOWLEDGE BASE
+
+==================================================
+1. AMOUNT SPIKE
+==================================================
+
+Rule:
+AMOUNT_SPIKE
+
+Definition:
+An amount spike occurs when the current bill amount increases significantly
+compared with the previous bill for the same utility.
+
+BillBuddy currently considers an increase of 20 percent or more to be
+a significant amount increase.
+
+Possible contributing factors include:
+
+- Increased utility consumption.
+- Changes in applicable tariffs or rates.
+- Fixed charges or service charges.
+- Taxes and regulatory charges.
+- Additional fees.
+- Billing adjustments.
+- Previous-period corrections.
+- Changes in the billing period.
+
+Important:
+BillBuddy must not claim that one of these factors definitely caused
+the increase unless supporting information is available in the bill data.
+
+Example:
+Previous bill amount: 2500
+Current bill amount: 3000
+Increase: 500
+Percentage increase: 20%
+
+Interpretation:
+The current bill is classified as having an amount spike because the
+amount increased by 20 percent.
+
+
+==================================================
+2. USAGE SPIKE
+==================================================
+
+Rule:
+USAGE_SPIKE
+
+Definition:
+A usage spike occurs when the current utility consumption increases
+significantly compared with the previous bill for the same utility.
+
+BillBuddy currently considers an increase of 20 percent or more to be
+a significant usage increase.
+
+Examples of usage units:
+
+- Electricity: kWh
+- Water: kL
+- Internet: GB
+
+Possible contributing factors include:
+
+- Increased consumption.
+- Changes in usage behavior.
+- Seasonal changes.
+- Increased number of devices or appliances.
+- Longer operating or usage periods.
+- Changes in household or user activity.
+
+Important:
+These are possible explanations only. BillBuddy must not present any
+possible cause as a confirmed cause without supporting evidence.
+
+
+==================================================
+3. COST PER UNIT SPIKE
+==================================================
+
+Rule:
+COST_PER_UNIT_SPIKE
+
+Definition:
+A cost-per-unit spike occurs when the amount paid for each unit of
+consumption increases significantly compared with the previous bill.
+
+BillBuddy currently considers an increase of 15 percent or more in
+cost per unit to be significant.
+
+Formula:
+
+Cost per unit = Total bill amount / Usage amount
+
+Percentage change:
+
+((Current cost per unit - Previous cost per unit)
+ / Previous cost per unit) × 100
+
+Example:
+
+Previous bill:
+Amount = 3000
+Usage = 300 kWh
+Cost per unit = 10
+
+Current bill:
+Amount = 3900
+Usage = 300 kWh
+Cost per unit = 13
+
+Cost per unit increase = 30%
+
+Interpretation:
+The cost per unit increased significantly even though the usage
+remained the same.
+
+Possible contributing factors include:
+
+- Tariff or rate changes.
+- Fixed or additional charges.
+- Taxes or fees.
+- Billing adjustments.
+- Changes in the composition of charges.
+
+Important:
+BillBuddy must not state that a tariff change or another specific
+factor occurred unless supporting information is available.
+
+
+==================================================
+4. ZERO USAGE WITH NON-ZERO AMOUNT
+==================================================
+
+Rule:
+ZERO_USAGE_NONZERO_AMOUNT
+
+Definition:
+This anomaly occurs when a bill records zero usage while still
+containing a non-zero bill amount.
+
+Example:
+
+Usage = 0
+Bill amount = 1500
+
+Possible explanations include:
+
+- Fixed charges.
+- Minimum charges.
+- Taxes or fees.
+- Service charges.
+- Billing adjustments.
+- Incorrect or missing usage information.
+- Previous-period adjustments.
+
+Recommended verification:
+
+The user should check the detailed bill, charge breakdown,
+meter or usage reading, and any applicable fixed charges.
+
+Important:
+BillBuddy must not assume that the bill is incorrect merely because
+usage is zero and the amount is non-zero.
+
+
+==================================================
+5. COMBINED ANOMALIES
+==================================================
+
+A bill can contain more than one anomaly.
+
+For example:
+
+- AMOUNT_SPIKE
+- USAGE_SPIKE
+
+may occur together when both the bill amount and utility consumption
+increase significantly.
+
+Another example:
+
+- AMOUNT_SPIKE
+- COST_PER_UNIT_SPIKE
+
+may occur when the bill amount increases substantially and the amount
+paid per unit also increases.
+
+BillBuddy should explain each detected anomaly separately and then
+provide an overall interpretation.
+
+The presence of multiple anomalies does not prove a specific cause.
+
+
+==================================================
+6. ANOMALY INTERPRETATION PRINCIPLES
+==================================================
+
+BillBuddy should follow these principles when explaining anomalies:
+
+1. Report detected facts first.
+2. Use the previous and current bill values as evidence.
+3. Clearly distinguish facts from possible explanations.
+4. Do not invent causes.
+5. Do not claim tariff changes without tariff data.
+6. Do not claim meter problems without supporting evidence.
+7. Do not claim fraud, leakage, equipment failure, or provider error
+   without supporting evidence.
+8. Recommend reasonable verification steps when appropriate.
+9. Keep explanations understandable to students.
+10. Use the detected anomaly rule as the primary basis for the explanation.
+
+
+==================================================
+7. SUPPORTED BILLBUDDY ANOMALY THRESHOLDS
+==================================================
+
+AMOUNT_SPIKE:
+20 percent or greater increase.
+
+USAGE_SPIKE:
+20 percent or greater increase.
+
+COST_PER_UNIT_SPIKE:
+15 percent or greater increase.
+
+ZERO_USAGE_NONZERO_AMOUNT:
+Usage is zero while the bill amount is greater than zero.
+
+
+==================================================
+8. EVIDENCE REQUIREMENT
+==================================================
+
+Every anomaly explanation should be grounded in available bill data.
+
+Useful evidence includes:
+
+- Previous bill amount.
+- Current bill amount.
+- Previous usage.
+- Current usage.
+- Usage unit.
+- Previous cost per unit.
+- Current cost per unit.
+- Billing period.
+- Utility type.
+- Provider name.
+- Detected anomaly rule.
+
+If the available data does not establish a cause, the explanation
+should explicitly say that the cause cannot be determined from the
+available bill information.
